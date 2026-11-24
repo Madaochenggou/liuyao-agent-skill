@@ -33,7 +33,7 @@ def _relative(element, palace_element):
     if element==palace_element:return '兄弟'
     if PRODUCES[element]==palace_element:return '子孙'
     if PRODUCES[palace_element]==element:return '父母'
-    if CONTROLS[element]==palace_element:return '妻财'
+    if CONTROLS[palace_element]==element:return '妻财'
     return '官鬼'
 def line_attributes(bits, position, calendar):
     lower=TRIGRAMS[sum(bits[i]<<i for i in range(3))]; upper=TRIGRAMS[sum(bits[i+3]<<i for i in range(3))]; tri=lower if position<3 else upper; branch=BRANCHES[tri][position]; element=FIVE[branch]; palace=PALACES[tuple(bits)]['palace']; pbranch=BRANCHES[palace][0]; stem=calendar.get('day_stem'); spirit=SPIRITS[(START.get(stem,0)+position)%6]
