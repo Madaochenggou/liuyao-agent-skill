@@ -15,7 +15,7 @@ def check():
     skill = (ROOT / 'SKILL.md').read_text()
     assert skill.startswith('---\nname: liuyao-agent-skill\ndescription: ')
     rules = set(re.findall(r'\| (R\d{2}) \|', (ROOT / 'references/rules.md').read_text()))
-    assert len(rules) == 13
+    assert len(rules) == 19
     cases = json.loads((ROOT / 'cases/teaching-cases.json').read_text())
     case_ids = {c['id'] for c in cases}
     assert len(case_ids) == len(cases) == 6
