@@ -24,8 +24,14 @@
 - `scripts/check_repository.py`：本地结构、案例及测试关联检查，不执行断卦。
 - `liuyao/`：Python 确定性起卦、卦变、基础关系、校验、CLI 和本地案例接口。
 - [开源调研](references/research-audit.md)：外部项目仅作比较，未直接复制。
+- [CHANGELOG](CHANGELOG.md)：已实现变更记录。
+- [BACKLOG](BACKLOG.md)：候选功能和暂缓事项。
+- [RESEARCH](RESEARCH.md)：理论争议与待验证假设。
+- [USER_FEEDBACK](USER_FEEDBACK.md)：脱敏后的真实使用反馈模板。
 
 运行 `python3 scripts/check_repository.py` 检查交付结构。行为评估另按测试规程执行；结构检查通过不代表模型行为已通过。
+
+项目当前以个人长期研究为目标。核心计算、传统规则、AI 推理、数据存储和交互层保持可独立替换；暂不开发前端、账号、支付、云服务、HTTP API 或 MCP Server。未来产品化需求应先由真实使用反馈证明价值，再复用稳定的核心接口。
 
 运行 `python -m pytest`（需安装 pytest）执行自动化测试；无第三方依赖时可直接运行 `python -m liuyao cast --method specified --lines 7,8,9,8,6,7 --json`。当前历法函数只返回明确标记的近似占位结果，不能用于严肃应期；完整节气、农历、纳甲和伏神实现仍需独立标准数据与测试后启用。
 
