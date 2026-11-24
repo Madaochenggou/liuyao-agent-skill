@@ -30,6 +30,8 @@
 - [USER_FEEDBACK](USER_FEEDBACK.md)：脱敏后的真实使用反馈模板。
 - [历法审查](references/calendar-audit.md)：`lunar-python` 依赖、口径和固定样本。
 - `liuyao/renderer.py`：离线 Pillow 排盘图渲染器，不改动卦盘数据。
+- `liuyao/output.py`：JSON、PNG、Markdown、纯文本及 `auto/inline/attachment/file/markdown/text` 展示适配层。
+- [兼容性记录](COMPATIBILITY.md)：客户端能力和已知限制。
 
 运行 `python3 scripts/check_repository.py` 检查交付结构。行为评估另按测试规程执行；结构检查通过不代表模型行为已通过。
 

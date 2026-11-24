@@ -9,7 +9,7 @@ def check():
     required = ['SKILL.md', 'README.md', 'LICENSE', 'references/rules.md',
                 'references/prediction-record.md', 'cases/README.md',
                 'cases/teaching-cases.json', 'tests/README.md', 'tests/behavioral-tests.json']
-    required += ['CHANGELOG.md', 'BACKLOG.md', 'RESEARCH.md', 'USER_FEEDBACK.md']
+    required += ['CHANGELOG.md', 'BACKLOG.md', 'RESEARCH.md', 'USER_FEEDBACK.md', 'COMPATIBILITY.md']
     for name in required:
         assert (ROOT / name).is_file(), f'Missing: {name}'
     skill = (ROOT / 'SKILL.md').read_text()
