@@ -9,6 +9,9 @@ def generate_chart(casting, calendar=None):
     for i,x in enumerate(lines):
         a=line_attributes(bits, i, calendar or {})
         a.update({'position':i+1,'value':x['value'],'yin':x['yin'],'moving':x['moving'],'changed_yin': bool(changed[i]==0) if x['moving'] else None})
+        if x['moving']:
+            ca=line_attributes(changed, i, calendar or {})
+            a['changed_attribute']={'branch':ca['branch'],'element':ca['element'],'trigram':ca['trigram'],'palace':ca['palace'],'relative':ca['relative']}
         attrs.append(a)
     return {'schema_version':'1.0','casting':casting,'calendar':calendar or {},'primary_hexagram':{'name':primary_name,'bits':bits,'index':hexagram_index(bits)},'changed_hexagram':({'name':changed_name,'bits':changed,'index':hexagram_index(changed)} if changed_name else None),'moving_lines':[i+1 for i,x in enumerate(lines) if x['moving']],'lines':attrs}
 

@@ -28,12 +28,13 @@
 - [BACKLOG](BACKLOG.md)：候选功能和暂缓事项。
 - [RESEARCH](RESEARCH.md)：理论争议与待验证假设。
 - [USER_FEEDBACK](USER_FEEDBACK.md)：脱敏后的真实使用反馈模板。
+- [历法审查](references/calendar-audit.md)：`lunar-python` 依赖、口径和固定样本。
 
 运行 `python3 scripts/check_repository.py` 检查交付结构。行为评估另按测试规程执行；结构检查通过不代表模型行为已通过。
 
 项目当前以个人长期研究为目标。核心计算、传统规则、AI 推理、数据存储和交互层保持可独立替换；暂不开发前端、账号、支付、云服务、HTTP API 或 MCP Server。未来产品化需求应先由真实使用反馈证明价值，再复用稳定的核心接口。
 
-运行 `python -m pytest`（需安装 pytest）执行自动化测试；无第三方依赖时可直接运行 `python -m liuyao cast --method specified --lines 7,8,9,8,6,7 --json`。当前历法函数只返回明确标记的近似占位结果，不能用于严肃应期；完整节气、农历、纳甲和伏神实现仍需独立标准数据与测试后启用。
+运行 `pip install -e .` 安装 `lunar-python` 依赖，再用 `python -m pytest` 执行自动化测试；也可运行 `python -m liuyao calendar --datetime 2026-11-24T10:00:00+08:00 --json`。历法缺依赖或校验失败时应停止正式断卦，不由模型补写数据。
 
 ## 隐私与贡献
 

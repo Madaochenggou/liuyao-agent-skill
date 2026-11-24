@@ -1,0 +1,6 @@
+{
+  "source": "fixed public sample recorded before implementation; cross-check target is the published lunar-python API",
+  "datetime": "2026-11-24T10:00:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "expected": {"year_ganzhi":"丙午","month_ganzhi":"己亥","day_ganzhi":"壬寅","time_ganzhi":"乙巳","xun_empty":["辰","巳"]}
+}
