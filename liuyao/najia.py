@@ -1,4 +1,5 @@
 TRIGRAMS=['乾','坤','震','艮','坎','离','巽','兑']; FIVE={'子':'水','亥':'水','寅':'木','卯':'木','巳':'火','午':'火','申':'金','酉':'金','辰':'土','戌':'土','丑':'土','未':'土'}
+PALACE_ELEMENT={'乾':'金','兑':'金','离':'火','震':'木','巽':'木','坎':'水','艮':'土','坤':'土'}
 TRIGRAM_BITS={'乾':(1,1,1),'坤':(0,0,0),'震':(1,0,0),'艮':(0,0,1),'坎':(0,1,0),'离':(1,0,1),'巽':(0,1,1),'兑':(1,1,0)}
 BRANCHES={'乾':('子','寅','辰','午','申','戌'),'坤':('未','巳','卯','丑','亥','酉'),'震':('子','寅','辰','午','申','戌'),'巽':('丑','亥','酉','未','巳','卯'),'坎':('寅','辰','午','申','戌','子'),'离':('卯','丑','亥','酉','未','巳'),'艮':('辰','午','申','戌','子','寅'),'兑':('巳','卯','丑','亥','酉','未')}
 SPIRITS=['青龙','朱雀','勾陈','螣蛇','白虎','玄武']; START={'甲':0,'乙':0,'丙':1,'丁':1,'戊':2,'己':3,'庚':4,'辛':4,'壬':5,'癸':5}; PRODUCES={'木':'火','火':'土','土':'金','金':'水','水':'木'}; CONTROLS={'木':'土','土':'水','水':'火','火':'金','金':'木'}
@@ -36,6 +37,6 @@ def _relative(element, palace_element):
     if CONTROLS[palace_element]==element:return '妻财'
     return '官鬼'
 def line_attributes(bits, position, calendar):
-    lower=TRIGRAMS[sum(bits[i]<<i for i in range(3))]; upper=TRIGRAMS[sum(bits[i+3]<<i for i in range(3))]; tri=lower if position<3 else upper; branch=BRANCHES[tri][position]; element=FIVE[branch]; palace=PALACES[tuple(bits)]['palace']; pbranch=BRANCHES[palace][0]; stem=calendar.get('day_stem'); spirit=SPIRITS[(START.get(stem,0)+position)%6]
+    lower=TRIGRAMS[sum(bits[i]<<i for i in range(3))]; upper=TRIGRAMS[sum(bits[i+3]<<i for i in range(3))]; tri=lower if position<3 else upper; branch=BRANCHES[tri][position]; element=FIVE[branch]; palace=PALACES[tuple(bits)]['palace']; stem=calendar.get('day_stem'); spirit=SPIRITS[(START.get(stem,0)+position)%6]
     pi=PALACES[tuple(bits)]['palace_index'];世={0:5,1:0,2:1,3:2,4:3,5:4,6:3,7:2}[pi];应=(世+3)%6
-    return {'trigram':tri,'branch':branch,'element':element,'relative':_relative(element,FIVE[pbranch]),'spirit':spirit,'role':'世' if position==世 else ('应' if position==应 else None),'palace':palace,'palace_index':pi,'najia_note':'六亲按本卦宫五行；变爻保留本位六亲并另存变爻属性'}
+    return {'trigram':tri,'branch':branch,'element':element,'relative':_relative(element,PALACE_ELEMENT[palace]),'spirit':spirit,'role':'世' if position==世 else ('应' if position==应 else None),'palace':palace,'palace_element':PALACE_ELEMENT[palace],'palace_index':pi,'najia_note':'六亲按本卦宫五行；变爻保留本位六亲并另存变爻属性'}
