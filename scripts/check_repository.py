@@ -36,7 +36,7 @@ def check():
             for target in re.findall(r'\]\(([^)]+)\)', text):
                 if '://' not in target:
                     assert (path.parent / target.split('#')[0]).exists(), f'Broken link: {path}: {target}'
-    print('PASS: required files, 13 rules, 6 synthetic cases, 9 behavioral test definitions, local links, private-marker scan.')
+    print(f'PASS: required files, {len(rules)} rules, 6 synthetic cases, 9 behavioral test definitions, local links, private-marker scan.')
     print('Model behavioral tests: NOT RUN. Prediction accuracy: NOT EVALUATED.')
 
 if __name__ == '__main__':
