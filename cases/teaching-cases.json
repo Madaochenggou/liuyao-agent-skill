@@ -1,0 +1,68 @@
+[
+  {
+    "id": "C01",
+    "kind": "synthetic_partial",
+    "input": "午火动化未土；这里只提供一爻。",
+    "expected_reasoning": "火生土是本生变、化泄；可并论午未合，不是回头生。",
+    "rules": [
+      "R08"
+    ],
+    "outcome": null
+  },
+  {
+    "id": "C02",
+    "kind": "synthetic_partial",
+    "input": "四爻午火化未土，三爻世丑土静。",
+    "expected_reasoning": "本框架不得以四爻变未直接冲三爻丑；不可把三爻改成动爻。",
+    "rules": [
+      "R01",
+      "R07"
+    ],
+    "outcome": null
+  },
+  {
+    "id": "C03",
+    "kind": "synthetic_partial",
+    "input": "应戌土动化卯木，戌日；问对方会否推进，其他盘面缺失。",
+    "expected_reasoning": "并列回头克、六合及临日条件；不可见合消克或断绝对推进。",
+    "rules": [
+      "R09",
+      "R12"
+    ],
+    "outcome": null
+  },
+  {
+    "id": "C04",
+    "kind": "synthetic_partial",
+    "input": "申金动化巳火；假定巳火因空破暂不能有效回克。",
+    "expected_reasoning": "只能说明该项制约减弱，不能据此推出申金弱；也不自动等于竞争者。",
+    "rules": [
+      "R02",
+      "R10"
+    ],
+    "outcome": null
+  },
+  {
+    "id": "C05",
+    "kind": "synthetic_partial",
+    "input": "数日内事件；用爻旬空，但有动象及生扶。",
+    "expected_reasoning": "综合日辰月令与有效性，既不能只凭空断败，也不能只凭动断成。",
+    "rules": [
+      "R04",
+      "R05",
+      "R06"
+    ],
+    "outcome": null
+  },
+  {
+    "id": "C06",
+    "kind": "synthetic_partial",
+    "input": "事前目标是进入下一轮；到期只收到拒绝通知。",
+    "expected_reasoning": "收到消息不满足成功事件；若原主断成，按原口径记未命中。",
+    "rules": [
+      "R11",
+      "R13"
+    ],
+    "outcome": null
+  }
+]
