@@ -57,13 +57,14 @@ def render_chart(chart_data, output_path, theme='classic', scale=2, font_path=No
     image=Image.new('RGB',(W,H),PAPER); draw=ImageDraw.Draw(image)
     _text(draw,(margin,35*scale),'六爻排盘',title,INK)
     primary=chart_data.get('primary_hexagram',{}); changed=chart_data.get('changed_hexagram')
-    _text(draw,(margin,92*scale),f"本卦：{primary.get('name','未提供')}  ·  变卦：{changed.get('name') if changed else '静卦（无变卦）'}",body,TEAL)
+    palace=(chart_data.get('lines') or [{}])[0]
+    _text(draw,(margin,92*scale),f"本卦：{primary.get('name','未提供')}  ·  变卦：{changed.get('name') if changed else '静卦（无变卦）'}  ·  卦宫：{palace.get('palace','未提供')}（{palace.get('palace_element','未提供')}）",body,TEAL)
     cal=chart_data.get('calendar') or {}; cast=chart_data.get('casting') or {}
     info=[f"占问：{chart_data.get('question','未提供')}",f"起卦：{chart_data.get('created_at',cal.get('input','未提供'))}  {cast.get('method','未提供')}",f"公历：{cal.get('solar','未提供')}  农历：{cal.get('lunar','未提供')}",f"干支：{cal.get('year_ganzhi','未提供')}年 {cal.get('month_ganzhi','未提供')}月 {cal.get('day_ganzhi','未提供')}日 {cal.get('time_ganzhi','未提供')}时",f"月建：{cal.get('month_branch','未提供')}  日辰：{cal.get('day_branch','未提供')}  旬空：{'、'.join(cal.get('旬空',[])) or '未提供'}"]
     y=145*scale
     for line in info:
         for part in _wrap(line,70): _text(draw,(margin,y),part,small); y+=25*scale
-    headers=['爻位','阴阳','爻象','六神','六亲','纳甲','世应','变爻（本位）']
+    headers=['爻位','阴阳','本卦→变卦','六神','六亲','纳甲','世应','变爻（本位）']
     xs=[margin,130*scale,220*scale,430*scale,550*scale,670*scale,790*scale,860*scale]
     y=top
     draw.line((margin,y,W-margin,y),fill=GRID,width=2*scale)
@@ -73,7 +74,11 @@ def render_chart(chart_data, output_path, theme='classic', scale=2, font_path=No
         draw.line((margin,y,W-margin,y),fill=GRID,width=scale)
         _text(draw,(xs[0],y+25*scale),f"{row['position']}爻",body,RED if row.get('role') in ('世','应') else INK)
         _text(draw,(xs[1],y+25*scale),'阴' if row['yin'] else '阳',small)
-        _line(draw,xs[2],y+29*scale,150*scale,row['yin'],row['moving'],body)
+        _line(draw,xs[2],y+22*scale,65*scale,row['yin'],row['moving'],body)
+        bits=(changed or {}).get('bits') if changed else None
+        changed_yin=(bits[row['position']-1]==0) if bits else None
+        if changed_yin is not None:
+            _line(draw,xs[2]+95*scale,y+22*scale,65*scale,changed_yin,False,body)
         _text(draw,(xs[3],y+25*scale),row.get('spirit','未提供'),small)
         _text(draw,(xs[4],y+25*scale),row.get('relative','未提供'),small)
         _text(draw,(xs[5],y+25*scale),row.get('branch','未提供'),small)
