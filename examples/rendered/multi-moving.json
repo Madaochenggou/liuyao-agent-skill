@@ -1,0 +1,261 @@
+{
+  "schema_version": "1.0",
+  "casting": {
+    "method": "specified",
+    "algorithm_version": "1.0",
+    "lines": [
+      {
+        "value": 9,
+        "yin": false,
+        "moving": true,
+        "coins": null
+      },
+      {
+        "value": 6,
+        "yin": true,
+        "moving": true,
+        "coins": null
+      },
+      {
+        "value": 9,
+        "yin": false,
+        "moving": true,
+        "coins": null
+      },
+      {
+        "value": 6,
+        "yin": true,
+        "moving": true,
+        "coins": null
+      },
+      {
+        "value": 9,
+        "yin": false,
+        "moving": true,
+        "coins": null
+      },
+      {
+        "value": 6,
+        "yin": true,
+        "moving": true,
+        "coins": null
+      }
+    ],
+    "raw_lines": [
+      9,
+      6,
+      9,
+      6,
+      9,
+      6
+    ],
+    "raw_coins": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  "calendar": {
+    "status": "exact",
+    "solar": "2026-11-24 10:00:00",
+    "lunar": "二〇二六年十月十六",
+    "year_ganzhi": "丙午",
+    "month_ganzhi": "己亥",
+    "day_ganzhi": "壬寅",
+    "time_ganzhi": "乙巳",
+    "month_branch": "亥",
+    "day_branch": "寅",
+    "旬空": [
+      "辰",
+      "巳"
+    ]
+  },
+  "primary_hexagram": {
+    "name": "离坎",
+    "bits": [
+      1,
+      0,
+      1,
+      0,
+      1,
+      0
+    ],
+    "index": 21
+  },
+  "changed_hexagram": {
+    "name": "坎离",
+    "bits": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    "index": 42
+  },
+  "moving_lines": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "lines": [
+    {
+      "trigram": "离",
+      "branch": "卯",
+      "element": "木",
+      "relative": "父母",
+      "spirit": "青龙",
+      "role": null,
+      "palace": "坎",
+      "palace_element": "水",
+      "palace_index": 3,
+      "najia_note": "六亲按本卦宫五行；变爻保留本位六亲并另存变爻属性",
+      "position": 1,
+      "value": 9,
+      "yin": false,
+      "moving": true,
+      "changed_yin": true,
+      "changed_attribute": {
+        "branch": "子",
+        "element": "水",
+        "trigram": "震",
+        "palace": "离",
+        "relative": "官鬼"
+      }
+    },
+    {
+      "trigram": "离",
+      "branch": "丑",
+      "element": "土",
+      "relative": "官鬼",
+      "spirit": "朱雀",
+      "role": null,
+      "palace": "坎",
+      "palace_element": "水",
+      "palace_index": 3,
+      "najia_note": "六亲按本卦宫五行；变爻保留本位六亲并另存变爻属性",
+      "position": 2,
+      "value": 6,
+      "yin": true,
+      "moving": true,
+      "changed_yin": false,
+      "changed_attribute": {
+        "branch": "寅",
+        "element": "木",
+        "trigram": "震",
+        "palace": "离",
+        "relative": "子孙"
+      }
+    },
+    {
+      "trigram": "离",
+      "branch": "亥",
+      "element": "水",
+      "relative": "兄弟",
+      "spirit": "勾陈",
+      "role": "世",
+      "palace": "坎",
+      "palace_element": "水",
+      "palace_index": 3,
+      "najia_note": "六亲按本卦宫五行；变爻保留本位六亲并另存变爻属性",
+      "position": 3,
+      "value": 9,
+      "yin": false,
+      "moving": true,
+      "changed_yin": true,
+      "changed_attribute": {
+        "branch": "辰",
+        "element": "土",
+        "trigram": "震",
+        "palace": "离",
+        "relative": "父母"
+      }
+    },
+    {
+      "trigram": "震",
+      "branch": "午",
+      "element": "火",
+      "relative": "妻财",
+      "spirit": "螣蛇",
+      "role": null,
+      "palace": "坎",
+      "palace_element": "水",
+      "palace_index": 3,
+      "najia_note": "六亲按本卦宫五行；变爻保留本位六亲并另存变爻属性",
+      "position": 4,
+      "value": 6,
+      "yin": true,
+      "moving": true,
+      "changed_yin": false,
+      "changed_attribute": {
+        "branch": "酉",
+        "element": "金",
+        "trigram": "离",
+        "palace": "离",
+        "relative": "妻财"
+      }
+    },
+    {
+      "trigram": "震",
+      "branch": "申",
+      "element": "金",
+      "relative": "子孙",
+      "spirit": "白虎",
+      "role": null,
+      "palace": "坎",
+      "palace_element": "水",
+      "palace_index": 3,
+      "najia_note": "六亲按本卦宫五行；变爻保留本位六亲并另存变爻属性",
+      "position": 5,
+      "value": 9,
+      "yin": false,
+      "moving": true,
+      "changed_yin": true,
+      "changed_attribute": {
+        "branch": "未",
+        "element": "土",
+        "trigram": "离",
+        "palace": "离",
+        "relative": "父母"
+      }
+    },
+    {
+      "trigram": "震",
+      "branch": "戌",
+      "element": "土",
+      "relative": "官鬼",
+      "spirit": "玄武",
+      "role": "应",
+      "palace": "坎",
+      "palace_element": "水",
+      "palace_index": 3,
+      "najia_note": "六亲按本卦宫五行；变爻保留本位六亲并另存变爻属性",
+      "position": 6,
+      "value": 6,
+      "yin": true,
+      "moving": true,
+      "changed_yin": false,
+      "changed_attribute": {
+        "branch": "巳",
+        "element": "火",
+        "trigram": "离",
+        "palace": "离",
+        "relative": "兄弟"
+      }
+    }
+  ],
+  "question": "合成示例：长期研究测试",
+  "created_at": "2026-11-24T10:00:00+08:00",
+  "validation": {
+    "status": "ok",
+    "errors": [],
+    "warnings": []
+  }
+}

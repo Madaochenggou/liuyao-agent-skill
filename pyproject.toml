@@ -7,7 +7,7 @@ name = "liuyao-agent-skill"
 version = "0.2.0"
 description = "Deterministic research utilities for Liu Yao casting and chart validation"
 requires-python = ">=3.10"
-dependencies = ["lunar-python>=1.4.9,<2"]
+dependencies = ["lunar-python>=1.4.9,<2", "Pillow>=11.0,<12"]
 
 [project.scripts]
 liuyao = "liuyao.cli:main"

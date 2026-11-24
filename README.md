@@ -29,12 +29,15 @@
 - [RESEARCH](RESEARCH.md)：理论争议与待验证假设。
 - [USER_FEEDBACK](USER_FEEDBACK.md)：脱敏后的真实使用反馈模板。
 - [历法审查](references/calendar-audit.md)：`lunar-python` 依赖、口径和固定样本。
+- `liuyao/renderer.py`：离线 Pillow 排盘图渲染器，不改动卦盘数据。
 
 运行 `python3 scripts/check_repository.py` 检查交付结构。行为评估另按测试规程执行；结构检查通过不代表模型行为已通过。
 
 项目当前以个人长期研究为目标。核心计算、传统规则、AI 推理、数据存储和交互层保持可独立替换；暂不开发前端、账号、支付、云服务、HTTP API 或 MCP Server。未来产品化需求应先由真实使用反馈证明价值，再复用稳定的核心接口。
 
 运行 `pip install -e .` 安装 `lunar-python` 依赖，再用 `python -m pytest` 执行自动化测试；也可运行 `python -m liuyao calendar --datetime 2026-11-24T10:00:00+08:00 --json`。历法缺依赖或校验失败时应停止正式断卦，不由模型补写数据。
+
+渲染合成排盘：`python -m liuyao render --input examples/rendered/static.json --output /tmp/liuyao-chart.png`。渲染器使用 Pillow 和本机已有字体，找不到中文字体时回退并保持数据正确；系统字体不打包进仓库。PNG 仅为展示层，JSON 才是排盘事实来源。
 
 ## 隐私与贡献
 
