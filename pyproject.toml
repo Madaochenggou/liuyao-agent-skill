@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "liuyao-agent-skill"
+version = "0.2.0"
+description = "Deterministic research utilities for Liu Yao casting and chart validation"
+requires-python = ">=3.10"
+
+[project.scripts]
+liuyao = "liuyao.cli:main"

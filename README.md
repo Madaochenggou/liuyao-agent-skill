@@ -22,8 +22,12 @@
 - [合成案例](cases/README.md)：匿名教学片段及正确推理边界。
 - [行为测试](tests/README.md)：可在任意模型上手动或批量运行。
 - `scripts/check_repository.py`：本地结构、案例及测试关联检查，不执行断卦。
+- `liuyao/`：Python 确定性起卦、卦变、基础关系、校验、CLI 和本地案例接口。
+- [开源调研](references/research-audit.md)：外部项目仅作比较，未直接复制。
 
 运行 `python3 scripts/check_repository.py` 检查交付结构。行为评估另按测试规程执行；结构检查通过不代表模型行为已通过。
+
+运行 `python -m pytest`（需安装 pytest）执行自动化测试；无第三方依赖时可直接运行 `python -m liuyao cast --method specified --lines 7,8,9,8,6,7 --json`。当前历法函数只返回明确标记的近似占位结果，不能用于严肃应期；完整节气、农历、纳甲和伏神实现仍需独立标准数据与测试后启用。
 
 ## 隐私与贡献
 

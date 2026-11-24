@@ -27,7 +27,7 @@ def check():
         assert test['case_id'] is None or test['case_id'] in case_ids
         assert test['must'] and set(test['rules']) <= rules
     for path in ROOT.rglob('*'):
-        if '.git' in path.relative_to(ROOT).parts or path.name == '.DS_Store' or not path.is_file() or path.suffix == '.py':
+        if '.git' in path.relative_to(ROOT).parts or path.name == '.DS_Store' or not path.is_file() or path.suffix in ('.py', '.pyc'):
             continue
         text = path.read_text()
         assert not re.search(r'chatgpt-conversation://|source_message_id|conversationId|味之家|BLG|/Users/', text), f'Private marker: {path}'
